@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "about" => "homes#show"
   resources :users, only: [:index, :show, :create, :edit, :update]
-  resources :books, only: [:index, :show, :new, :create, :edit]
+  resources :books, only: [:index, :show, :new, :create, :edit, :destroy]
 end

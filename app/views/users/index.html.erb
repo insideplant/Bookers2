@@ -1,9 +1,9 @@
-<p id="notice">Welcome! You have signed up successfully.</p>
+
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
-      <%= attachment_image_tag @user,:profile_image, :fill,100,100,fallback:"no_image.jpg" %>
+      <%= attachment_image_tag @user,:profile_image, :fill,100,100,fallback:"no_image.jpg", size:'100x100' %>
       <table class="table">
         <tbody>
           <tr></tr>
@@ -57,8 +57,9 @@
         <% @users.each do |user|%>
         <tbody>
           <tr>
-            <td><%= attachment_image_tag @user,:profile_image, :fill,40,40,fallback:"no_image.jpg" %></td>
+            <td><%= attachment_image_tag user,:profile_image, :fill,40,40,fallback:"no_image.jpg", size:'40x40' %></td>
             <td><%= user.name%></td>
+            <td><%= link_to "Show", user_path(user.id) %></td>
             <td colspan="3"></td>
           </tr>
         </tbody>
